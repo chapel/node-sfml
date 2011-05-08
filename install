@@ -91,7 +91,7 @@ if [ ! -e "./sfml" ] ; then
          sudo cp -R lib64/* /Library/Frameworks
       else
          sudo cp -R extlibs/bin/OpenAL.framework /Library/Frameworks
-         sudo cp -R extlibs/bin/libsndfile.framework /Library/Frameworks
+         sudo cp -R extlibs/bin/sndfile.framework /Library/Frameworks
          sudo cp -R lib/* /Library/Frameworks
       fi
    else
