@@ -87,12 +87,12 @@ if [ ! -e "./sfml" ] ; then
    if [ "$platform" = 'darwin' ] ; then
       echo "Installing SFML Frameworks"
       if [ "$processor" = 'x86_64' ] ; then
-         sudo cp extlibs/bin/x86_64/* /Library/Frameworks
-         sudo cp lib64/* /Library/Frameworks
+         sudo cp -R extlibs/bin/x86_64/* /Library/Frameworks
+         sudo cp -R lib64/* /Library/Frameworks
       else
-         sudo cp extlibs/bin/OpenAL.framework /Library/Frameworks
-         sudo cp extlibs/bin/libsndfile.framework /Library/Frameworks
-         sudo cp lib/* /Library/Frameworks
+         sudo cp -R extlibs/bin/OpenAL.framework /Library/Frameworks
+         sudo cp -R extlibs/bin/libsndfile.framework /Library/Frameworks
+         sudo cp -R lib/* /Library/Frameworks
       fi
    else
       echo "Making SFML"
