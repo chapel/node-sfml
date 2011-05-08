@@ -65,8 +65,8 @@ if [ "$platform" != 'darwin' ] ; then
 fi
 #SFML
 if [ ! -e "./sfml" ] ; then
-   echo "Downloading SFML source"
-   if [ "$platform" != 'darwin' ] ; then
+   echo "Downloading SFML"
+   if [ "$platform" = 'darwin' ] ; then
      if [ "$processor" = 'x86_64' ] ; then
        `/usr/bin/curl -Lo "sfml.tar.bz2" "http://downloads.sourceforge.net/sfml/SFML-1.6-dev-macosx-ub32%2B64.tar.bz2"`
      else
