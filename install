@@ -72,13 +72,13 @@ if [ ! -e "./sfml" ] ; then
      else
        `/usr/bin/curl -Lo "sfml.tar.bz2" "http://downloads.sourceforge.net/sfml/SFML-1.6-dev-macosx-ub32.tar.bz2"`
      fi
-   `tar -xvf "sfml.tar.*"`
-    rm ./*.tar.*
+   `tar -xvf "sfml.tar.bz2"`
+    rm ./*.tar.bz2
     mv SFML-*/ sfml
    else
      `/usr/bin/curl -Lo "sfml.tar.gz" "https://github.com/LaurentGomila/SFML/tarball/master/sfml1"`
-     `tar -xvf "sfml.tar.*"`
-    rm ./*.tar.*
+     `tar -xvf "sfml.tar.gz"`
+    rm ./*.tar.gz
     mv LaurentGomila-SFML-*/ sfml
    fi
    
