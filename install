@@ -66,10 +66,13 @@ fi
 #SFML
 if [ ! -e "./sfml" ] ; then
    echo "Downloading SFML source"
-   `/usr/bin/svn checkout "http://sfml.svn.sourceforge.net/svnroot/sfml/tags/1.6" "sfml"`
-   cd sfml
+   `/usr/bin/curl -Lo "sfml.tar.gz" "https://github.com/LaurentGomila/SFML/tarball/sfml1"`
+   `tar -xvf "sfml.tar.gz"`
+    rm ./*.tar.gz
+    mv LaurentGomila-SFML-*/ sfml
    
-   
+    cd sfml
+
    if [ "$platform" != 'darwin' ] ; then
       echo "Installing External Frameworks"
       if [ "$processor" = 'x86_64' ] ; then
