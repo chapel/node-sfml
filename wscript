@@ -10,9 +10,12 @@ def set_options(opt):
 def configure(conf):
   conf.check_tool('compiler_cxx')
   conf.check_tool('node_addon')
-  conf.check(lib=['sfml-system','sfml-window','sfml-graphics','sfml-audio'], uselib_store='SFML')
-  conf.check(lib='openal', uselib_store='AL')
-  conf.check(lib='sndfile', uselib_store='SNDFILE')
+  if not conf.check(lib=['sfml-system','sfml-window','sfml-graphics','sfml-audio'], uselib_store='SFML')
+    conf.fatal("Cannot find SFML")
+  if not conf.check(lib='openal', uselib_store='AL')
+    conf.fatal("Cannot find openal")
+  if not conf.check(lib='sndfile', uselib_store='SNDFILE')
+    conf.fatal("Cannot find sndfile")
 
 
 def build(bld):
